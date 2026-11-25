@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#0a0304">
 <script>
 /* guard: must unlock on index.html first */
-try{if(localStorage.getItem('ff_ok')!=='1')location.replace('index.html')}catch(e){}
+try{if(localStorage.getItem('ff_ok')!=='1')location.replace('/index.html')}catch(e){}
 </script>
 <style>
 :root{--bg:#070203;--red:#ff2e2e;--deep:#7a0b0b;--glass:rgba(255,255,255,.04);--line:rgba(255,80,80,.18);--mut:#a98b8b;--u:clamp(14px,.52vw + 9px,30px)}
@@ -178,11 +178,11 @@ var FEATURES = [
 var $=function(i){return document.getElementById(i)};
 var mem={};function sget(k){try{return localStorage.getItem(k)}catch(e){return mem[k]||null}}
 function sset(k,v){try{localStorage.setItem(k,v)}catch(e){mem[k]=v}}
-Array.prototype.forEach.call(document.querySelectorAll('.buyl'),function(a){a.href='store.html';a.removeAttribute('target')});
+Array.prototype.forEach.call(document.querySelectorAll('.buyl'),function(a){a.href='/store.html';a.removeAttribute('target')});
 Array.prototype.forEach.call(document.querySelectorAll('.discl'),function(a){a.href=DISCORD_URL});
 function toast(t){var el=$('toast');el.textContent=t;el.classList.add('s');setTimeout(function(){el.classList.remove('s')},1800)}
 function log(t){var l=$('log');l.innerHTML+='<br>› '+t;l.scrollTop=l.scrollHeight}
-$('lock').onclick=function(){sset('ff_ok','0');location.href='index.html'};
+$('lock').onclick=function(){sset('ff_ok','0');location.href='/index.html'};
 
 var titles={home:'DASHBOARD',features:'HACKS',downloads:'DOWNLOADS',support:'SUPPORT'};
 Array.prototype.forEach.call(document.querySelectorAll('.nav[data-p]'),function(n){
