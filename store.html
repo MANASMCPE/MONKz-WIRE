@@ -4,116 +4,174 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>MONKz WIRE — Store</title>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='180 150 390 450'%3E%3Crect x='180' y='150' width='390' height='450' fill='%23080203'/%3E%3Cpolygon points='228,212 525,162 532,192 432,328 438,272 312,290' fill='%23ff3b3b'/%3E%3Cpolygon points='193,235 440,448 200,372' fill='%23ff8a8a'/%3E%3Cpolygon points='320,305 548,372 556,495 430,440' fill='%23b01212'/%3E%3Cpolygon points='322,425 550,520 225,585 215,575' fill='%23e02424'/%3E%3C/svg%3E">
+<meta name="description" content="Buy a MONKz WIRE license key. 1 Day, 3 Days, 7 Days, 30 Days and Lifetime plans.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="theme-color" content="#0a0304">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="stylesheet" href="/base.css">
 <style>
-:root{--bg:#070203;--red:#ff2e2e;--deep:#7a0b0b;--line:rgba(255,80,80,.18);--mut:#a98b8b;--u:clamp(14px,.52vw + 9px,30px)}
-*{box-sizing:border-box;margin:0;padding:0}
-html{font-size:var(--u)}
-body{background:var(--bg);color:#f4eaea;font-family:'Inter',system-ui,'Segoe UI',sans-serif;min-height:100vh;overflow-x:hidden}
-#fx{position:fixed;inset:0;pointer-events:none;z-index:0}
-.glow{position:fixed;width:70vw;height:70vw;left:50%;top:30%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(255,40,40,.22),transparent 60%);filter:blur(30px);pointer-events:none;animation:pulse 6s ease-in-out infinite}
-@keyframes pulse{50%{opacity:.55}}
-.topbar{position:relative;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:1rem clamp(1rem,3vw,3rem)}
-.tb{display:flex;align-items:center;gap:.6rem;font-weight:800;letter-spacing:.22em;font-size:.85rem;text-decoration:none;color:inherit}
-.tb b{color:var(--red)}
-.tb svg{width:2rem;height:2rem;filter:drop-shadow(0 0 .5rem rgba(255,40,40,.7))}
-.back{color:var(--mut);text-decoration:none;font-size:.75rem;letter-spacing:.12em;padding:.5rem 1rem;border:1px solid var(--line);border-radius:2rem;transition:.2s}
-.back:hover{color:#fff;border-color:var(--red)}
-main{position:relative;z-index:2;max-width:80rem;margin:0 auto;padding:1.5rem clamp(1rem,3vw,3rem) 4rem}
-.hero{text-align:center;margin-bottom:2.2rem}
-.hero h1{font-size:clamp(1.6rem,3vw,2.4rem);letter-spacing:.3em;font-weight:800}
+.topbar{position:sticky;top:0;z-index:30;display:flex;justify-content:space-between;align-items:center;padding:.9rem clamp(1rem,3vw,3rem);background:rgba(7,2,3,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.tn{display:flex;align-items:center;gap:1.4rem}
+.tn a:not(.btn){text-decoration:none;color:var(--mut);font-size:.72rem;letter-spacing:.15em;font-weight:700;transition:.2s}
+.tn a:not(.btn):hover{color:#fff}
+main{position:relative;z-index:3;max-width:82rem;margin:0 auto;padding:2.5rem clamp(1rem,3vw,3rem) 1rem}
+.hero{text-align:center;margin-bottom:2.4rem;animation:rise .7s both}
+.hero img{width:5rem;height:5rem;filter:drop-shadow(0 0 1.4rem rgba(255,40,40,.85))}
+.hero h1{font-size:clamp(1.7rem,3.2vw,2.6rem);letter-spacing:.28em;font-weight:800;margin:.9rem 0 .5rem}
 .hero h1 span{color:var(--red)}
-.hero p{color:var(--mut);font-size:.85rem;margin-top:.6rem}
-.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:1.1rem}
-.plan{position:relative;padding:1.6rem 1.3rem;text-align:center;background:linear-gradient(160deg,rgba(255,255,255,.06),rgba(255,255,255,.012));border:1px solid var(--line);border-radius:1.1rem;backdrop-filter:blur(14px);transition:.3s;display:flex;flex-direction:column}
-.plan:hover{transform:translateY(-6px);border-color:rgba(255,70,70,.65);box-shadow:0 0 2.5rem rgba(255,30,30,.25)}
-.plan.hot{border-color:rgba(255,60,60,.7);box-shadow:0 0 2.2rem rgba(255,30,30,.22)}
-.badge{position:absolute;top:-.65rem;left:50%;transform:translateX(-50%);padding:.25rem .8rem;border-radius:2rem;background:linear-gradient(135deg,var(--red),var(--deep));font-size:.6rem;font-weight:800;letter-spacing:.15em;white-space:nowrap}
-.plan h3{font-size:.8rem;letter-spacing:.3em;color:var(--mut);font-weight:700}
-.price{font-size:2.3rem;font-weight:800;margin:.7rem 0 .2rem}
-.price em{font-style:normal;color:var(--red);font-size:1.3rem;vertical-align:top;margin-right:.1rem}
+.hero p{color:var(--mut);font-size:.88rem;max-width:36rem;margin:0 auto;line-height:1.7}
+.trust{display:flex;justify-content:center;gap:.7rem;flex-wrap:wrap;margin-top:1.3rem}
+.trust span{padding:.4rem .9rem;border:1px solid var(--line);border-radius:2rem;font-size:.68rem;color:#d9c4c4;background:rgba(255,255,255,.03);font-weight:600}
+.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1.2rem;margin:2.2rem 0 3rem}
+@media(min-width:1000px){.plans{grid-template-columns:repeat(5,1fr);gap:1rem}.plan{padding:1.6rem 1rem 1.3rem}.price{font-size:2.1rem}}
+.plan{position:relative;padding:1.8rem 1.4rem 1.5rem;text-align:center;background:linear-gradient(160deg,rgba(255,255,255,.065),rgba(255,255,255,.012));border:1px solid var(--line);border-radius:1.2rem;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:.3s;display:flex;flex-direction:column;animation:rise .6s both}
+.plan:hover{transform:translateY(-7px);border-color:var(--line2);box-shadow:0 0 2.6rem rgba(255,30,30,.25)}
+.plan.hot{border-color:rgba(255,60,60,.75);box-shadow:0 0 2.4rem rgba(255,30,30,.24),inset 0 0 2rem rgba(255,30,30,.06)}
+.badge{position:absolute;top:-.7rem;left:50%;transform:translateX(-50%);padding:.28rem .9rem;border-radius:2rem;background:linear-gradient(135deg,var(--red),var(--deep));font-size:.6rem;font-weight:800;letter-spacing:.16em;white-space:nowrap;box-shadow:0 0 1.2rem rgba(255,46,46,.5)}
+.pi{font-size:1.6rem;margin-bottom:.2rem}
+.plan h3{font-size:.82rem;letter-spacing:.3em;color:#fff;font-weight:800}
+.price{font-size:2.5rem;font-weight:800;margin:.8rem 0 .1rem;line-height:1}
+.price em{font-style:normal;color:var(--red);font-size:1.3rem;vertical-align:top;margin-right:.15rem}
 .per{font-size:.68rem;color:var(--mut);letter-spacing:.1em}
-ul{list-style:none;margin:1.2rem 0;text-align:left;font-size:.78rem;flex:1}
-li{padding:.45rem 0;border-bottom:1px solid rgba(255,255,255,.05);color:#d9c4c4}
-li::before{content:"✔";color:var(--red);margin-right:.6rem}
+.save{display:inline-block;margin-top:.6rem;padding:.2rem .6rem;border-radius:1rem;background:rgba(51,255,119,.1);color:#7dffa8;font-size:.62rem;font-weight:800;letter-spacing:.08em}
+ul{list-style:none;margin:1.2rem 0 1.3rem;text-align:left;font-size:.78rem;flex:1}
+li{padding:.5rem 0;border-bottom:1px solid rgba(255,255,255,.05);color:#d9c4c4}
+li::before{content:"✔";color:var(--red);margin-right:.65rem;font-weight:800}
 li:last-child{border:0}
-.buyb{display:block;width:100%;padding:.8rem;border:0;border-radius:.7rem;cursor:pointer;font-weight:800;letter-spacing:.2em;font-size:.75rem;color:#fff;background:linear-gradient(135deg,var(--red),var(--deep));box-shadow:0 0 1.4rem rgba(255,46,46,.4);transition:.25s}
-.buyb:hover{box-shadow:0 0 2.6rem rgba(255,46,46,.8);transform:translateY(-2px)}
-.note{text-align:center;margin-top:2rem;color:var(--mut);font-size:.78rem;line-height:1.8}
-.note a{color:var(--red);text-decoration:none;font-weight:700}
-#toast{position:fixed;left:50%;bottom:1.5rem;transform:translate(-50%,10px);z-index:50;padding:.8rem 1.3rem;border:1px solid var(--line);border-radius:.7rem;background:rgba(15,4,5,.96);font-size:.78rem;opacity:0;transition:.3s;pointer-events:none}
-#toast.s{opacity:1;transform:translate(-50%,0)}
+h2.sec{text-align:center;font-size:1rem;letter-spacing:.3em;margin:3.2rem 0 1.4rem}
+h2.sec::after{content:"";display:block;width:3rem;height:3px;margin:.8rem auto 0;background:var(--red);border-radius:3px;box-shadow:0 0 .8rem var(--red)}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:1rem}
+.step{padding:1.4rem;text-align:center;border:1px solid var(--line);border-radius:1rem;background:rgba(255,255,255,.03)}
+.step b{display:grid;place-items:center;width:2.4rem;height:2.4rem;margin:0 auto .8rem;border-radius:50%;background:linear-gradient(135deg,var(--red),var(--deep));font-size:.9rem;box-shadow:0 0 1.2rem rgba(255,46,46,.45)}
+.step h4{font-size:.85rem;letter-spacing:.1em;margin-bottom:.4rem}
+.step p{color:var(--mut);font-size:.75rem;line-height:1.7}
+.incl{display:grid;grid-template-columns:repeat(auto-fit,minmax(12rem,1fr));gap:.9rem}
+.incl div{padding:1.1rem;border:1px solid var(--line);border-radius:.9rem;background:rgba(255,255,255,.03);font-size:.78rem;color:#d9c4c4;text-align:center}
+.incl div b{display:block;font-size:1.4rem;margin-bottom:.4rem}
+.faq{max-width:46rem;margin:0 auto}
+details{padding:1rem 1.2rem;margin-bottom:.7rem;border:1px solid var(--line);border-radius:.9rem;background:rgba(255,255,255,.03);font-size:.82rem}
+summary{cursor:pointer;font-weight:700;list-style:none}summary::-webkit-details-marker{display:none}
+summary::after{content:"+";float:right;color:var(--red);font-size:1.1rem}details[open] summary::after{content:"–"}
+details p{color:var(--mut);margin-top:.7rem;line-height:1.8}
+.cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:1rem}
+.cat{padding:1.3rem;border:1px solid var(--line);border-radius:1rem;background:linear-gradient(160deg,rgba(255,255,255,.05),rgba(255,255,255,.01));transition:.3s}
+.cat:hover{border-color:var(--line2);transform:translateY(-3px)}
+.cat h4{display:flex;align-items:center;gap:.6rem;font-size:.8rem;letter-spacing:.2em;margin-bottom:.9rem}
+.cat h4 i{font-style:normal;width:2.2rem;height:2.2rem;display:grid;place-items:center;border-radius:.6rem;background:rgba(255,46,46,.12);border:1px solid var(--line)}
+.cat h4 em{margin-left:auto;font-style:normal;font-size:.62rem;padding:.15rem .55rem;border-radius:1rem;background:rgba(255,46,46,.14);color:#ff9a9a}
+.cat div{display:flex;flex-wrap:wrap;gap:.4rem}
+.cat span{padding:.25rem .6rem;border-radius:.5rem;background:rgba(255,255,255,.05);font-size:.68rem;color:#d9c4c4}
+.cmpw{overflow-x:auto;border:1px solid var(--line);border-radius:1rem;background:rgba(255,255,255,.025)}
+.cmp{width:100%;border-collapse:collapse;font-size:.78rem;min-width:40rem}
+.cmp th,.cmp td{padding:.85rem .8rem;text-align:center;border-bottom:1px solid rgba(255,255,255,.05)}
+.cmp th{font-size:.7rem;letter-spacing:.18em;color:#fff;background:rgba(255,46,46,.08)}
+.cmp td:first-child,.cmp th:first-child{text-align:left;color:var(--mut)}
+.cmp tr:last-child td{border:0}.cmp .y{color:var(--red);font-weight:800}.cmp .n{color:#5a4444}
+.pay{max-width:46rem;margin:2.5rem auto 0;padding:1.5rem;text-align:center;border:1px solid var(--line2);border-radius:1.1rem;background:rgba(255,255,255,.03)}
+.pay h3{letter-spacing:.2em;font-size:.85rem}.pay p{color:var(--mut);font-size:.78rem;margin:.6rem 0 1rem;line-height:1.7}
+.upi{display:flex;gap:.8rem;justify-content:center;align-items:center;flex-wrap:wrap}.upi code{padding:.6rem 1rem;border-radius:.6rem;background:rgba(0,0,0,.5);border:1px solid var(--line);font-size:.9rem;letter-spacing:.05em}
+.pay small{display:block;margin-top:.8rem;color:#7d6464;font-size:.7rem}
+.help{margin:3rem auto 0;max-width:46rem;padding:2rem;text-align:center;border:1px solid var(--line2);border-radius:1.2rem;background:linear-gradient(160deg,rgba(255,46,46,.12),rgba(255,255,255,.02));box-shadow:0 0 3rem rgba(255,30,30,.12)}
+.help h3{letter-spacing:.2em;font-size:.95rem}
+.help p{color:var(--mut);font-size:.8rem;margin:.6rem 0 1.2rem;line-height:1.7}
+.help .acts{display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap}
+.help small{display:block;margin-top:1.2rem;color:#7d6464;font-size:.7rem}
+.help small a{color:var(--mut)}
+@media(max-width:600px){.tn a:not(.btn){display:none}}
 </style>
 </head>
 <body>
-<canvas id="fx"></canvas><div class="glow"></div>
-<svg width="0" height="0" style="position:absolute"><defs>
-<symbol id="lg" viewBox="180 150 390 450">
-  <defs>
-    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset=".25" stop-color="#ff8a80"/><stop offset="1" stop-color="#c41212"/></linearGradient>
-    <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe3e0"/><stop offset=".5" stop-color="#ff4a4a"/><stop offset="1" stop-color="#8a0c0c"/></linearGradient>
-    <linearGradient id="g3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c81818"/><stop offset="1" stop-color="#4a0505"/></linearGradient>
-    <linearGradient id="g4" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e83a3a"/><stop offset="1" stop-color="#7a0909"/></linearGradient>
-  </defs>
-  <polygon points="228,212 525,162 532,192 432,328 438,272 312,290" fill="url(#g1)"/>
-  <polygon points="310,278 436,262 432,282 312,298" fill="#fff" opacity=".85"/>
-  <polygon points="193,235 440,448 200,372" fill="url(#g2)"/>
-  <polygon points="320,305 548,372 556,495 430,440" fill="url(#g3)" stroke="#ff4d4d" stroke-width="2"/>
-  <polygon points="322,425 550,520 225,585 215,575" fill="url(#g4)" stroke="#ff6b6b" stroke-width="2"/>
-</symbol></defs></svg>
+<canvas id="fx"></canvas><div class="grid-bg"></div><div class="glow"></div>
 
-<div class="topbar">
-  <a class="tb" href="/index.html"><svg><use href="#lg"/></svg><span>MONKz<b>WIRE</b></span></a>
-  <a class="back" href="/index.html">← HAVE A KEY? UNLOCK</a>
-</div>
+<header class="topbar">
+  <a class="tb" href="/index.html"><img src="/mark.svg" alt=""><span>MONKz<b>WIRE</b></span></a>
+  <nav class="tn">
+    <a href="/help">HELP</a>
+    <a class="btn sm ghost" href="/unlock.html">🔓 I HAVE A KEY</a>
+  </nav>
+</header>
 
 <main>
-  <div class="hero">
+  <section class="hero">
+    <img src="/mark.svg" alt="MONKz WIRE">
     <h1>MONKz<span> WIRE</span> STORE</h1>
-    <p>Choose your plan — click BUY and complete your order on Discord</p>
-  </div>
-  <div class="plans" id="plans"></div>
-  <div class="note">Click <b>BUY</b> to open our Discord, create a ticket and send your plan name.<br>
-    Need help? <a id="dc" target="_blank" rel="noopener"></a></div>
+    <p>Pick a plan, press <b>BUY NOW</b> and finish your order on Discord. Your key is delivered to you directly.</p>
+    <div class="trust"><span>⚡ Fast delivery</span><span>🔑 Instant key</span><span>💬 24/7 Discord support</span><span>🔒 Private &amp; safe</span></div>
+  </section>
+
+  <section class="plans" id="plans"></section>
+
+  <h2 class="sec">WHAT'S INSIDE — <span id="fcount">48</span> FEATURES</h2>
+  <section class="cats" id="cats"></section>
+
+  <h2 class="sec">COMPARE PLANS</h2>
+  <section class="cmpw"><table class="cmp" id="cmp"></table></section>
+
+  <h2 class="sec">EVERY PLAN INCLUDES</h2>
+  <section class="incl">
+    <div><b>🎛️</b>Full hacks menu</div>
+    <div><b>🎯</b>Aim, Visuals &amp; Player</div>
+    <div><b>⚙️</b>Settings &amp; FPS Boost</div>
+    <div><b>🔄</b>Updates</div>
+  </section>
+
+  <section class="pay" id="paybox" style="display:none">
+    <h3>💳 PAY WITH UPI</h3>
+    <p>Pay the plan amount to this UPI ID, then send the payment screenshot on Discord to receive your key.</p>
+    <div class="upi"><code id="upiid"></code><button class="btn sm" id="upicopy">COPY UPI ID</button></div>
+    <small id="upiname"></small>
+  </section>
+
+  <h2 class="sec">HOW IT WORKS</h2>
+  <section class="steps">
+    <div class="step"><b>1</b><h4>CHOOSE A PLAN</h4><p>Pick the duration that suits you and press BUY NOW.</p></div>
+    <div class="step"><b>2</b><h4>ORDER ON DISCORD</h4><p>You'll be taken to our Discord. Paste the copied order text and complete payment.</p></div>
+    <div class="step"><b>3</b><h4>GET YOUR KEY</h4><p>We send your license key in the format <code>XXXX-XXXX-XXX</code>.</p></div>
+    <div class="step"><b>4</b><h4>UNLOCK</h4><p>Enter the key on the unlock page and the panel opens right away.</p></div>
+  </section>
+
+  <h2 class="sec">FAQ</h2>
+  <section class="faq">
+    <details><summary>When does my plan start?</summary><p>Your plan starts the moment you enter the key for the first time. Until then no time is used.</p></details>
+    <details><summary>Can one key be used for another plan?</summary><p>No. Every key is made for one plan only — 1 Day, 3 Days, 7 Days, 30 Days or Lifetime.</p></details>
+    <details><summary>My key expired. What now?</summary><p>Buy a new key from this store and enter it on the unlock page.</p></details>
+    <details><summary>How do I pay?</summary><p>Payment is completed on Discord with the admin. Press BUY NOW and open a ticket.</p></details>
+  </section>
+
+  <section class="help">
+    <h3>NEED HELP?</h3>
+    <p>Questions about plans, payment or your key? Our team answers on Discord.</p>
+    <div class="acts">
+      <a class="btn" href="/help">💬 HELP ON DISCORD</a>
+      <a class="btn ghost" href="mailto:scriptermonk@gmail.com">✉ EMAIL ADMIN</a>
+    </div>
+    <small>Admin: <a href="mailto:scriptermonk@gmail.com">scriptermonk@gmail.com</a> · <a href="/discord">discord.gg/gZGJFyWUU</a></small>
+  </section>
 </main>
+
+<footer class="ft">© 2026 MONKz WIRE — All rights reserved · <a href="/terms.html">Terms</a> · <a href="/refund.html">Refunds</a> · <a href="/privacy.html">Privacy</a> · <a href="/help">Help</a> · <a href="/discord">Discord</a> · <a href="mailto:scriptermonk@gmail.com">Admin</a></footer>
 <div id="toast"></div>
 
+<script src="/fx.js"></script>
+<script src="/data.js"></script>
 <script>
-/* ===== EDIT THESE ===== */
-var DISCORD_URL = "https://discord.gg/gZGJFyWUU";
-var CURRENCY    = "₹";
-/* name, price, badge (optional), perks */
-var PLANS = [
-  {name:"1 DAY",    price:99,   per:"for 24 hours", perks:["Full panel access","All hacks unlocked","Instant key on Discord"]},
-  {name:"3 DAYS",   price:199,  per:"for 3 days",   perks:["Full panel access","All hacks unlocked","Instant key on Discord"]},
-  {name:"7 DAYS",   price:349,  per:"for 7 days",   badge:"POPULAR", perks:["Full panel access","All hacks unlocked","Priority support"]},
-  {name:"30 DAYS",  price:799,  per:"for 30 days",  perks:["Full panel access","All hacks unlocked","Priority support","Free updates"]},
-  {name:"LIFETIME", price:1499, per:"one-time payment", badge:"BEST VALUE", perks:["Full panel access","All hacks unlocked","VIP support","Lifetime updates"]}
-];
-/* ====================== */
-var $=function(i){return document.getElementById(i)};
-$('dc').href=DISCORD_URL;$('dc').textContent=DISCORD_URL;
-function toast(t){var el=$('toast');el.textContent=t;el.classList.add('s');setTimeout(function(){el.classList.remove('s')},2200)}
-var h='';
-PLANS.forEach(function(p,i){
-  h+='<div class="plan'+(p.badge?' hot':'')+'">'+(p.badge?'<div class="badge">'+p.badge+'</div>':'')+
-  '<h3>'+p.name+'</h3><div class="price"><em>'+CURRENCY+'</em>'+p.price+'</div><div class="per">'+p.per+'</div><ul>'+
-  p.perks.map(function(k){return '<li>'+k+'</li>'}).join('')+'</ul><button class="buyb" data-i="'+i+'">BUY NOW</button></div>';
-});
-$('plans').innerHTML=h;
-$('plans').addEventListener('click',function(e){
-  var b=e.target.closest('.buyb');if(!b)return;
-  var p=PLANS[+b.dataset.i],msg='I want to buy MONKz WIRE '+p.name+' ('+CURRENCY+p.price+')';
-  try{navigator.clipboard.writeText(msg)}catch(err){}
-  toast('Opening Discord… order text copied');
-  setTimeout(function(){window.open(DISCORD_URL,'_blank')||(location.href=DISCORD_URL)},700);
-});
 
-var c=$('fx'),x=c.getContext('2d'),W,H,P=[];
-function rs(){var d=Math.min(window.devicePixelRatio||1,2);W=c.width=innerWidth*d;H=c.height=innerHeight*d;P=[];for(var i=0;i<Math.floor(innerWidth/14);i++)P.push({x:Math.random()*W,y:Math.random()*H,r:(Math.random()*1.8+.4)*d,v:(Math.random()*.4+.1)*d})}
-addEventListener('resize',rs);rs();
-(function loop(){x.clearRect(0,0,W,H);P.forEach(function(p){p.y-=p.v;if(p.y<0){p.y=H;p.x=Math.random()*W}x.beginPath();x.arc(p.x,p.y,p.r,0,7);x.fillStyle='rgba(255,60,60,.55)';x.fill()});requestAnimationFrame(loop)})();
+var $=function(i){return document.getElementById(i)};
+function toast(t){var el=$('toast');el.textContent=t;el.classList.add('s');clearTimeout(toast.t);toast.t=setTimeout(function(){el.classList.remove('s')},2400)}
+$('cats').innerHTML=catCards();$('fcount').textContent=totalFeatures();
+/* comparison */
+var rows=[["Full hacks menu",[1,1,1,1,1]],["All features unlocked",[1,1,1,1,1]],["Key delivered on Discord",[1,1,1,1,1]],["Priority support",[0,0,1,1,1]],["Free updates",[0,0,0,1,1]],["VIP support",[0,0,0,0,1]],["Lifetime updates",[0,0,0,0,1]]];
+var th='<tr><th>FEATURE</th>'+PLANS.map(function(p){return'<th>'+p.name+'</th>'}).join('')+'</tr>';
+th+=rows.map(function(r){return'<tr><td>'+r[0]+'</td>'+r[1].map(function(v){return v?'<td class="y">✔</td>':'<td class="n">—</td>'}).join('')+'</tr>'}).join('');
+th+='<tr><td>Price</td>'+PLANS.map(function(p){return'<td><b>'+CURRENCY+p.price+'</b></td>'}).join('')+'</tr>';
+$('cmp').innerHTML=th;
+if(UPI_ID){$('paybox').style.display='block';$('upiid').textContent=UPI_ID;$('upiname').textContent='Name: '+UPI_NAME;
+  $('upicopy').onclick=function(){try{navigator.clipboard.writeText(UPI_ID)}catch(e){}toast('UPI ID copied')}}
+$('plans').innerHTML=planCards();
+$('plans').addEventListener('click',function(e){var b=e.target.closest('button[data-i]');if(!b)return;buyPlan(+b.dataset.i,toast)});
 </script>
 </body>
 </html>

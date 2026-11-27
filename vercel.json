@@ -1,4 +1,74 @@
 {
   "cleanUrls": false,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/discord",
+      "destination": "https://discord.gg/gZGJFyWUU",
+      "permanent": false
+    },
+    {
+      "source": "/help",
+      "destination": "https://discord.gg/gZGJFyWUU",
+      "permanent": false
+    },
+    {
+      "source": "/support",
+      "destination": "https://discord.gg/gZGJFyWUU",
+      "permanent": false
+    },
+    {
+      "source": "/join",
+      "destination": "https://discord.gg/gZGJFyWUU",
+      "permanent": false
+    },
+    {
+      "source": "/buy",
+      "destination": "/store.html",
+      "permanent": false
+    },
+    {
+      "source": "/panel",
+      "destination": "/main.html",
+      "permanent": false
+    },
+    {
+      "source": "/login",
+      "destination": "/unlock.html",
+      "permanent": false
+    },
+    {
+      "source": "/keygen",
+      "destination": "/keygen.html",
+      "permanent": false
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
+      ]
+    },
+    {
+      "source": "/keys.json",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
+      ]
+    }
+  ]
 }

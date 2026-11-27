@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MONKz WIRE — Unlock Panel</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="MONKz WIRE premium panel. Enter your license key to unlock.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0a0304">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta property="og:title" content="MONKz WIRE — Premium Panel">
+<meta property="og:description" content="Key-protected premium panel. Buy a key and unlock.">
+<meta property="og:image" content="https://monkzwire.vercel.app/og.png">
+<link rel="stylesheet" href="/base.css">
+<style>
+body{display:flex;flex-direction:column;min-height:100vh}
+.topbar{position:relative;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:1rem clamp(1rem,3vw,3rem)}
+.tn{display:flex;align-items:center;gap:1.4rem}
+.tn a:not(.btn){text-decoration:none;color:var(--mut);font-size:.72rem;letter-spacing:.15em;font-weight:700;transition:.2s}
+.tn a:not(.btn):hover{color:#fff}
+.stage{position:relative;z-index:3;flex:1;display:grid;place-items:center;padding:1rem}
+.card{width:min(27rem,94vw);padding:2.4rem 2.1rem 1.8rem;text-align:center;background:linear-gradient(160deg,rgba(255,255,255,.07),rgba(255,255,255,.012));border:1px solid var(--line);border-radius:1.3rem;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:0 0 5rem rgba(255,30,30,.14),inset 0 0 2rem rgba(255,255,255,.02);animation:rise .7s both}
+.mark{width:5.4rem;height:5.4rem;filter:drop-shadow(0 0 1.4rem rgba(255,40,40,.85));animation:float 5s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-6px)}}
+.card h1{margin:1rem 0 .3rem;font-size:1.55rem;letter-spacing:.32em;font-weight:800}
+.card h1 span{color:var(--red)}
+.sub{color:var(--mut);font-size:.8rem;margin-bottom:1.6rem}
+.lab{display:block;text-align:left;font-size:.62rem;letter-spacing:.22em;color:var(--mut);margin-bottom:.45rem;font-weight:700}
+input{width:100%;padding:.95rem 1rem;background:rgba(0,0,0,.5);border:1px solid var(--line);border-radius:.8rem;color:#fff;font:700 1rem ui-monospace,Consolas,monospace;letter-spacing:.28em;text-align:center;outline:none;transition:.25s}
+input::placeholder{color:#5a3f3f;letter-spacing:.28em}
+input:focus{border-color:var(--red);box-shadow:0 0 1.4rem rgba(255,46,46,.35)}
+.go{margin-top:1rem;padding:.95rem}
+.err{min-height:1.2rem;margin-top:.9rem;font-size:.72rem;color:#ff7b7b;font-weight:700;letter-spacing:.06em;line-height:1.8}
+.err a{color:#fff;text-decoration:underline}
+.err .du{color:var(--red);font-weight:500}
+.shake{animation:shake .4s}
+@keyframes shake{25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+.quick{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-top:1.1rem;padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.06)}
+.quick .btn{padding:.7rem .4rem;font-size:.66rem}
+.tiny{margin-top:1.1rem;font-size:.66rem;color:#6a5252;line-height:1.8}
+.tiny a{color:var(--mut);text-decoration:none}.tiny a:hover{color:var(--red)}
+@media(max-width:600px){.tn a:not(.btn){display:none}}
+</style>
+</head>
+<body>
+<canvas id="fx"></canvas><div class="grid-bg"></div><div class="glow"></div>
+
+<header class="topbar">
+  <a class="tb" href="/index.html"><img src="/mark.svg" alt=""><span>MONKz<b>WIRE</b></span></a>
+  <nav class="tn">
+    <a href="/store.html">STORE</a>
+    <a href="/help">HELP</a>
+    <a class="btn sm pulse" href="/store.html">🛒 BUY PANEL</a>
+  </nav>
+</header>
+
+<main class="stage">
+  <form class="card" id="f" autocomplete="off">
+    <img class="mark" src="/mark.svg" alt="MONKz WIRE">
+    <h1>MONKz<span> WIRE</span></h1>
+    <p class="sub">Enter your license key to unlock the panel</p>
+    <label class="lab" for="pw">LICENSE KEY</label>
+    <input id="pw" type="text" inputmode="text" autocapitalize="characters" spellcheck="false" maxlength="13" placeholder="XXXX-XXXX-XXX" autofocus>
+    <div id="cf" style="display:flex;justify-content:center;margin-top:1rem"></div>
+    <button class="btn block go" type="submit">🔓 UNLOCK ACCESS</button>
+    <div class="err" id="err" role="alert"></div>
+    <div class="quick">
+      <a class="btn ghost" href="/store.html">🛒 BUY KEY</a>
+      <a class="btn ghost" href="/help">💬 HELP</a>
+    </div>
+    <div class="tiny">Discord: <a href="/discord">discord.gg/gZGJFyWUU</a><br>Admin: <a href="mailto:scriptermonk@gmail.com">scriptermonk@gmail.com</a></div>
+  </form>
+</main>
+
+<footer class="ft">© 2026 MONKz WIRE — All rights reserved</footer>
+
+<script src="/data.js"></script>
+<script src="/auth.js"></script>
+<script>
+var DISCORD_URL="https://discord.gg/gZGJFyWUU";
+var $=function(i){return document.getElementById(i)};
+var pw=$('pw'),err=$('err'),form=$('f');
+
+function bad(html){
+  err.innerHTML=html;
+  form.classList.remove('shake');void form.offsetWidth;form.classList.add('shake');
+}
+function wrongMsg(){
+  return 'WRONG KEY — <a href="/store.html">BUY A KEY</a> · <a href="/help">NEED HELP?</a><br><a class="du" href="/discord">'+DISCORD_URL+'</a>';
+}
+function expiredMsg(){
+  return 'KEY EXPIRED — <a href="/store.html">BUY A NEW KEY</a> · <a href="/help">NEED HELP?</a><br><a class="du" href="/discord">'+DISCORD_URL+'</a>';
+}
+
+/* auto-format  XXXX-XXXX-XXX */
+pw.addEventListener('input',function(){
+  var v=normKey(pw.value).slice(0,11),o=v.slice(0,4);
+  if(v.length>4)o+='-'+v.slice(4,8);
+  if(v.length>8)o+='-'+v.slice(8);
+  pw.value=o;
+});
+
+/* already unlocked? */
+var q=location.search.indexOf('e=1')>-1;
+if(q){err.innerHTML=expiredMsg()}
+else if(licValid(getLic())){location.replace('/main.html')}
+
+loadKeys();
+var cfToken='';
+if(TURNSTILE_SITEKEY){
+  window.onTurnstile=function(t){cfToken=t};
+  var ts=document.createElement('script');ts.src='https://challenges.cloudflare.com/turnstile/v0/api.js?onload=mwTs';ts.async=true;document.head.appendChild(ts);
+  window.mwTs=function(){turnstile.render('#cf',{sitekey:TURNSTILE_SITEKEY,theme:'dark',callback:function(t){cfToken=t},'expired-callback':function(){cfToken=''}})};
+}
+form.addEventListener('submit',function(e){
+  e.preventDefault();
+  if(TURNSTILE_SITEKEY&&!cfToken){bad('Please complete the human check first.');return}
+  var k=pw.value,btn=form.querySelector('.go');
+  btn.disabled=true;btn.textContent='CHECKING…';
+  checkKey(k).then(function(plan){
+    btn.disabled=false;btn.textContent='🔓 UNLOCK ACCESS';
+    if(!plan){bad(wrongMsg());pw.select();return}
+    var old=getLic();
+    if(old&&old.h===hashKey(k)&&licExpired(old)){bad(expiredMsg());return}
+    activateKey(k,plan);
+    location.href='/main.html';
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /keygen.html
+Disallow: /main.html
+Disallow: /keys.json
